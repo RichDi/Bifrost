@@ -183,7 +183,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this, "Usuario Loggeado",
                     Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, enterprises.class);
             startActivity(intent);
         }
 

@@ -123,9 +123,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
-
-
     }
 
     @Override
@@ -186,8 +183,6 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this, enterprises.class);
             startActivity(intent);
         }
-
-
 
     }
     

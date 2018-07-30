@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class enterprises extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
@@ -40,17 +42,15 @@ public class enterprises extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        String[] datos = new String[5];
-        datos[0]="Lol";
-        datos[1]="Lol1";
-        datos[2]="Lol2";
-        datos[3]="Lol3";
-        datos[4]="Lol4";
+        ArrayList<EnterpriseObj> listaEmpresas = new ArrayList<>();
 
+        listaEmpresas.add(new EnterpriseObj("Digimundo",5,"Bifrost"));
+        listaEmpresas.add(new EnterpriseObj("Digimundo",5,"Bifrost"));
+        listaEmpresas.add(new EnterpriseObj("Digimundo",5,"Bifrost"));
 
 
         // specify an adapter (see also next example)
-        mAdapter = new EnterpriseListAdapter(datos);
+        mAdapter = new EnterpriseListAdapter(listaEmpresas);
         mRecyclerView.setAdapter(mAdapter);
     }
 

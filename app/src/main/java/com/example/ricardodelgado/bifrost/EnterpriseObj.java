@@ -4,12 +4,12 @@ public class EnterpriseObj {
 
     private String nombreDeEmpresa;
     private int numeroDeEmpleados;
-    private String proyectoReciente;
+    private int numeroDeProyectos;
 
-    EnterpriseObj(String nombreDeEmpresa, int numeroDeEmpleados, String proyectoReciente) {
+    EnterpriseObj(String nombreDeEmpresa, int numeroDeEmpleados, int numeroDeProyectos) {
         this.nombreDeEmpresa = nombreDeEmpresa;
         this.numeroDeEmpleados = numeroDeEmpleados;
-        this.proyectoReciente = proyectoReciente;
+        this.numeroDeProyectos = numeroDeProyectos;
     }
 
     public String getNombreDeEmpresa() {
@@ -28,11 +28,11 @@ public class EnterpriseObj {
         this.numeroDeEmpleados = numeroDeEmpleados;
     }
 
-    public String getProyectoReciente() {
-        return proyectoReciente;
+    public int getNumeroDeProyectos() {
+        return numeroDeProyectos;
     }
 
-    public void setProyectoReciente(String proyectoReciente) {
-        this.proyectoReciente = proyectoReciente;
+    public void setNumeroDeProyectos(int numeroDeProyectos) {
+        this.numeroDeProyectos = numeroDeProyectos;
     }
 }

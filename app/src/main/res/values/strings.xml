@@ -11,4 +11,5 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="title_activity_enterprises">enterprises</string>
+    <string name="title_activity_proyects">Proyects</string>
 </resources>

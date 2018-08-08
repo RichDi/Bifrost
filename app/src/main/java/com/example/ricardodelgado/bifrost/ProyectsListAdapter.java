@@ -15,8 +15,8 @@ import java.util.ArrayList;
 
 import static android.support.v4.content.ContextCompat.startActivity;
 
-public class EnterpriseListAdapter extends RecyclerView.Adapter<EnterpriseListAdapter.ViewHolder> {
-    private ArrayList<EnterpriseObj> mDataset;
+public class ProyectsListAdapter extends RecyclerView.Adapter<ProyectsListAdapter.ViewHolder> {
+    private ArrayList<ProyectObj> mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -31,16 +31,16 @@ public class EnterpriseListAdapter extends RecyclerView.Adapter<EnterpriseListAd
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    EnterpriseListAdapter(ArrayList<EnterpriseObj> myDataset) {
+    ProyectsListAdapter(ArrayList<ProyectObj> myDataset) {
         mDataset = myDataset;
     }
 
     // Create new views (invoked by the layout manager)
     @NonNull
     @Override
-    public EnterpriseListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProyectsListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // create a new view
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.enterprise_layout, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.proyects_layout, parent, false);
 
         return new ViewHolder(v);
     }
@@ -51,23 +51,19 @@ public class EnterpriseListAdapter extends RecyclerView.Adapter<EnterpriseListAd
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        TextView nombreEmpresa = holder.mView.findViewById(R.id.textView2);
-        TextView numeroEmpleados = holder.mView.findViewById(R.id.textView3);
-        TextView proyectoReciente = holder.mView.findViewById(R.id.textView5);
+        TextView titleTV = holder.mView.findViewById(R.id.textView6);
+        TextView descriptionTV = holder.mView.findViewById(R.id.textView4);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Accediendo empresa", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                Intent intent = new Intent(holder.mView.getContext(), Proyects.class);
-                holder.mView.getContext().startActivity(intent);
             }
         });
 
-        nombreEmpresa.setText(mDataset.get(position).getNombreDeEmpresa());
-        numeroEmpleados.setText("Coolaboradores" + mDataset.get(position).getNumeroDeEmpleados());
-        proyectoReciente.setText("Coolaboradores" + mDataset.get(position).getNumeroDeProyectos());
+        titleTV.setText(mDataset.get(position).getTitulo());
+        descriptionTV.setText(mDataset.get(position).getDescipcion());
 
     }
 
